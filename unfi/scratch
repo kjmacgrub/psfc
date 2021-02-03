@@ -1,0 +1,7 @@
+import os
+import re
+
+for root, dirs, files in os.walk("/users/km/downloads", topdown=False):
+    for name in files:
+        if ".zip" in name:
+            print(os.path.join(name))
