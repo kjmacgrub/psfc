@@ -1,0 +1,100 @@
+import os
+import re
+import shutil
+from csv import reader
+from csv import writer
+from pathlib import Path
+from itertools import groupby
+
+'''
+    -- Finds all zip files of orders downloaded from UNFI in the users 'downloads' folder OR its subfolders
+    -- Unpacks the files into one 'unfi' subdirectory
+    -- Based on the UNFI invoice file map (iLayout.txt) finds the invoice date and number, coversheet number, and invoice amount
+    -- Creates lists of invoices with the same coversheet number
+    -- Creates files out of these lists, adds Acumatica-friendly headers, names them with coversheet number and date, and saves the files in an 'acumatica' subdirectory
+    -- Deletes the unpacked 'fil' files but leaves the zip files
+'''
+
+downloads = str(Path.home()) + "/downloads"
+unfi_dir = downloads + "/unfi" 
+if os.path.exists(downloads + "/unfi/acumatica") == False:  
+    os.mkdir(downloads +"/unfi/acumatica/")      
+acumat_dir = unfi_dir + "/acumatica/"
+
+def clear_dir(): 
+    for root, dirs, files in os.walk(acumat_dir): 
+        for old_file in files:
+            os.remove(str(os.path.join(root, old_file)))
+
+def unpack(): 
+    for root, dirs, files in os.walk(downloads, topdown=False):
+        for filename in files:
+            if re.search(("^C\d{5}_.*zip$"), filename):
+                        #  +||||||||||||| Exists at beginning of line 
+                        #   +|||||||||||| Literal
+                        #    ++|||||||||| Digits only 
+                        #      +++||||||| Number of digits 
+                        #         ++||||| Literals
+                        #           +|||| Any number of characters
+                        #            +++| Literals
+                        #               + Exists at end of line
+                zip_file=str((os.path.join(root,filename)))
+                shutil.unpack_archive(zip_file, unfi_dir)
+
+def extract(): 
+    for root, dirs, files in os.walk(unfi_dir, topdown=False):
+        order_list = []
+        sheet_date = {}
+        for filename in files:
+            order_row = []
+                                                        # Look for any '.fil' files that have been unpacked into 'downloads' or any of its subdirectories
+            if re.search(("^C\d{11}_.*fil$"), filename):
+                fil_file=str((os.path.join(root,filename)))
+                                                        # Turn each file into a list and extract fields based on the unfi layout map 
+                with open(fil_file, 'r') as read_obj: 
+                    csv_reader = reader(read_obj, delimiter = '\t')  
+                    list_file = list(csv_reader)
+                    coversheet_num = list_file[0][0][181:189]
+                    inv_num = list_file[0][0][1:9]
+                    inv_yr = list_file[0][0][18:22]
+                    inv_mth = list_file[0][0][22:24]
+                    inv_day = list_file[0][0][24:26]
+                    inv_date = (inv_mth + "_" + inv_day + "_" + inv_yr)
+                    total_amount = int(list_file[-1][0][88:97])/100
+                                                        # Store the date with the coversheet number 
+                    sheet_date[coversheet_num] = inv_date
+                                                        # For non-negative invoice totals (ignore negative credits) add to order_list
+                    if total_amount >= 0:
+                        order_row = (coversheet_num, inv_num, 1, total_amount, inv_date)
+                        order_list.append(order_row)
+                                                        # Sort order_list so that the itertools groupby method can group rows by coversheet number
+        order_list.sort()
+        for c,o in groupby(order_list,lambda x: x[0]):
+            print("\nCover sheet #", c)
+                                                        # Create new csv files and add headers
+            new_acufile = (acumat_dir + sheet_date[c] + "_" + c + ".csv")
+            header = ['Transaction Descr.', 'Quantity', 'Unit Cost']
+            with open(new_acufile, 'w') as write_obj:
+                csv_writer = writer(write_obj, delimiter = ',')
+                csv_writer.writerow(h for h in header)
+                                                        # Print each coversheet # with the invoice numbers grouped underneath
+                                                        # and append these rows to the new csv files
+            for row in o:
+                print(f'{row[1]}',f'{row[3]:>10.2f}',f'{row[4]:>15}')
+                group = (row[1], row[2], row[3])
+                with open(new_acufile, 'a') as write_obj:
+                    csv_writer = writer(write_obj, delimiter = ',')
+                    csv_writer.writerow(g for g in group)  
+
+def cleanup(): # delete UNFI's fil and txt files but leave the zip files
+    for root, dirs, files in os.walk(unfi_dir, topdown=False):
+        for name in files:
+            if re.search(("^C\d{11}_.*[fil,txt]$"), name):
+                os.remove(str(os.path.join(root, name)))
+
+if __name__ == "__main__":
+
+    clear_dir() # delete old acumatica files 
+    unpack() # unpack UNFI zip files
+    extract() # get data from UNFI 'fil' format files and create new acumatica csv files
+    cleanup() # delete the unpacked UNFI files  
