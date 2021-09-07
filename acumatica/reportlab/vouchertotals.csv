@@ -1,0 +1,54 @@
+﻿*Voucher #,Reference #,Invoice Date,Due Date,*Invoice #,Amount,*Vendor Name,Vouchered By
+18-099,20190016,6/2/21,6/9/21,6421,410.40,Agrarian Feast,joseph_gordon
+18-100,20190017,5/30/21,6/20/21,E2105-67938,"4,251.57",Albert's Organics,joseph_gordon
+18-100,20190018,6/1/21,6/22/21,E2106-69355,"4,058.57",Albert's Organics,joseph_gordon
+18-100,20190019,6/2/21,6/23/21,E2106-70219,"2,030.10",Albert's Organics,joseph_gordon
+18-100,20190020,5/31/21,6/21/21,E2105-68986,881.40,Albert's Organics,joseph_gordon
+18-100,20190027,6/3/21,6/24/21,E2106-70896,"2,575.07",Albert's Organics,joseph_gordon
+18-101,20190021,6/1/21,6/22/21,19603979,"1,228.00",Baldor Specialty Foods Inc,joseph_gordon
+18-101,20190022,6/1/21,6/22/21,19603986,680.00,Baldor Specialty Foods Inc,joseph_gordon
+18-101,20190023,6/3/21,6/24/21,19616746,"1,875.00",Baldor Specialty Foods Inc,joseph_gordon
+18-101,20190024,6/2/21,6/23/21,19610283,"1,589.00",Baldor Specialty Foods Inc,joseph_gordon
+18-101,20190025,6/4/21,6/25/21,19623025,680.00,Baldor Specialty Foods Inc,joseph_gordon
+18-101,20190026,6/4/21,6/25/21,19623014,"1,587.50",Baldor Specialty Foods Inc,joseph_gordon
+18-103,20190028,5/31/21,6/14/21,124465,402.70,Blue Moon Acres,joseph_gordon
+18-104,20190030,6/1/21,6/8/21,11754,248.00,Element Farms,joseph_gordon
+18-104,20190062,6/4/21,6/11/21,11850,527.00,Element Farms,joseph_gordon
+18-105,20190032,6/2/21,6/23/21,426732,220.00,Eli & Ali's LLC,joseph_gordon
+18-105,20190063,6/4/21,6/25/21,426774,282.00,Eli & Ali's LLC,joseph_gordon
+18-107,20190034,5/31/21,5/31/21,7514708 RI,"5,945.50",Four Seasons Produce Inc,joseph_gordon
+18-107,20190035,5/31/21,5/31/21,7514710 RI,"3,583.50",Four Seasons Produce Inc,joseph_gordon
+18-107,20190036,5/31/21,5/31/21,7514713 RI,"1,554.95",Four Seasons Produce Inc,joseph_gordon
+18-107,20190037,6/1/21,6/1/21,7515598 RI,"1,554.30",Four Seasons Produce Inc,joseph_gordon
+18-107,20190038,6/2/21,6/2/21,7516846 RI,"5,102.00",Four Seasons Produce Inc,joseph_gordon
+18-107,20190039,6/2/21,6/2/21,7516844 RI,"7,165.30",Four Seasons Produce Inc,joseph_gordon
+18-107,20190040,6/3/21,6/3/21,7518529 RI,"3,902.00",Four Seasons Produce Inc,joseph_gordon
+18-107,20190041,6/3/21,6/3/21,7518526 RI,"5,242.10",Four Seasons Produce Inc,joseph_gordon
+18-107,20190042,6/4/21,6/4/21,7520002 RI,"9,945.20",Four Seasons Produce Inc,joseph_gordon
+18-107,20190043,6/4/21,6/4/21,7519999 RI,"6,446.50",Four Seasons Produce Inc,joseph_gordon
+18-108,20190033,6/2/21,6/17/21,65835,420.00,Fresh Meadow Organic Farm,joseph_gordon
+18-108,20190044,6/4/21,6/19/21,65837,"1,922.12",Fresh Meadow Organic Farm,joseph_gordon
+18-109,20190045,6/1/21,7/1/21,GG03429430,428.50,"Gotham Greens Farms, LLC (GG - Farms)",joseph_gordon
+18-109,20190046,6/3/21,7/3/21,GG03429521,217.00,"Gotham Greens Farms, LLC (GG - Farms)",joseph_gordon
+18-110,20190064,6/3/21,6/3/21,61848,360.00,Grindstone Farm,joseph_gordon
+18-111,20190047,6/1/21,6/1/21,7268255,"3,121.50",Hepworth Farms,joseph_gordon
+18-113,20190048,6/1/21,6/1/21,472401,"9,055.00",Jedda's Produce Inc,joseph_gordon
+18-113,20190049,6/3/21,6/3/21,472402,"13,825.60",Jedda's Produce Inc,joseph_gordon
+18-114,20190050,5/31/21,6/15/21,305828,"11,708.72",Lancaster Farm Fresh Co-Op,joseph_gordon
+18-114,20190051,6/2/21,6/17/21,306219,"8,237.03",Lancaster Farm Fresh Co-Op,joseph_gordon
+18-114,20190065,6/4/21,6/19/21,306631,"7,946.75",Lancaster Farm Fresh Co-Op,joseph_gordon
+18-115,20190052,6/1/21,6/1/21,0432,222.00,Mushrooms NYC,joseph_gordon
+18-116,20190053,6/3/21,6/18/21,32272,"1,249.36",Myers Produce,joseph_gordon
+18-116,20190054,5/31/21,6/15/21,32234,"3,954.46",Myers Produce,joseph_gordon
+18-117,20190055,6/3/21,6/3/21,080393,316.25,Painters & Poets,joseph_gordon
+18-118,20190056,6/3/21,6/3/21,412464,303.45,Perfect Foods Inc,joseph_gordon
+18-119,20190066,6/4/21,7/4/21,21331,444.00,R.L. Irwin Company,joseph_gordon
+18-120,20190057,6/1/21,6/15/21,000554687,"2,068.00",Regional Access,joseph_gordon
+18-120,20190058,6/1/21,6/15/21,000554692,175.00,Regional Access,joseph_gordon
+18-120,20190059,6/3/21,6/17/21,000554795,"3,056.00",Regional Access,joseph_gordon
+18-120,20190060,6/3/21,6/17/21,000555053,72.00,Regional Access,joseph_gordon
+18-121,20190067,6/4/21,6/14/21,707804,404.80,Rose Valley Farm,joseph_gordon
+18-122,20190061,6/2/21,6/17/21,R125260578,168.00,Square Roots Urban Growers Inc.,joseph_gordon
+18-123,20190029,6/2/21,6/16/21,524,866.88,Big Apple Produce,joseph_gordon
+18-178,20189862,5/21/21,5/21/21,112-5982147-2305019,38.05,Amazon,cecelia_rembert
+18-193,20189892,5/27/21,5/27/21,57735,213.89,Purchases One-Off Receiving Coordinator <1000 Salmon Voucher,Dominique_Esser

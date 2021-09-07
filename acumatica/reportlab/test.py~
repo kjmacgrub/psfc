@@ -1,0 +1,5 @@
+import json
+x = 'orders.json'
+y = json.loads(x)
+
+
