@@ -26,7 +26,7 @@ rowHeights= heightList
 )
 
 mainTable.setStyle([
-    ('GRID', (0, 0), (-1, -1), 1, 'gray'),
+    ('GRID', (0, 0), (-1, -1), 1, 'blue'),
     ('LEFTPADDING', (0, 0), (-1, -1), 0),
     ('BOTTOMPADDING', (0, 0), (-1, -1), 0,),
 

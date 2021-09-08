@@ -12,12 +12,6 @@ def genBodyTable(width, height):
     ]
 
     heightList = [
-        height * 20/100,
-        height * 10/100,
-        height * 10/100,
-        height * 10/100,
-        height * 10/100,
-        height * 10/100,
         height * 10/100,
         height * 10/100,
     ]
@@ -25,17 +19,13 @@ def genBodyTable(width, height):
     res = Table([
         ['Reference #', 'Invoice Date', 'Due Date', 'Invoice #', 'Amount', 'Vouchered By'],
         ['b', 'c', 'd', 'e', 'f', 'g'],
-        ['h', '', '', '', ''],
-        ['', '', '', '', ''],
-        ['', '', '', '', ''],
-        ['', '', '', '', ''],
-        ['', '', '', '', ''],
-        ['', '', '', '', ''],
     ],
     widthList,
     heightList)
 
     res.setStyle([
         ('GRID', (0,0), (-1,-1), 1, 'gray'),
+        ('VALIGN', (0,0), (-1,-1), 'TOP'),
+        ('ALIGN', (0,0), (-1,-1), 'CENTER'),
     ])
     return res
